@@ -33,13 +33,11 @@ const projects = [
 ---
 
 <section id="projects" class="px-4 py-16 bg-secondary">
-  <h2
-    class="uppercase font-bold text-3xl md:text-5xl tracking-widest text-center"
-  >
+  <h2 class="uppercase font-bold text-5xl tracking-widest text-center">
     Proyectos
   </h2>
   <div class="bg-primary w-[48px] h-[5px] rounded-full mx-auto mt-5"></div>
-  <p class="text-center mt-5 text-text-color md:text-lg lg:text-2xl">
+  <p class="text-center mt-5 text-text-color text-lg lg:text-2xl">
     Aquí encontrarás algunos de los proyectos personales y para clientes que he
     creado
   </p>
@@ -48,10 +46,10 @@ const projects = [
       <div class="mt-8 flex flex-col lg:flex-row lg:px-16">
         <Image src={project.image} alt={project.title} class="lg:w-2/3" />
         <div class="flex-1 self-center">
-          <h2 class="font-bold text-2xl md:text-3xl lg:text-4xl text-center lg:text-left mt-6">
+          <h2 class="font-bold text-3xl lg:text-4xl text-center lg:text-left mt-6">
             {project.title}
           </h2>
-          <p class="text-sm md:text-base lg:text-2xl lg:mt-8 text-text-color text-center lg:text-left mt-2">
+          <p class="lg:text-2xl lg:mt-8 text-text-color text-center lg:text-left mt-2">
             {project.description}
           </p>
           <a

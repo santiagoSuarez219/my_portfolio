@@ -22,10 +22,6 @@ const navbarItems = [
     title: "Experiencia",
     url: "experience",
   },
-  {
-    title: "Contacto",
-    url: "contactme",
-  },
 ];
 ---
 
@@ -36,15 +32,15 @@ const navbarItems = [
   <div class="flex items-center">
     <Image src={logo} alt="logo" class="rounded-lg w-[50px] lg:w-[70px]" />
     <h1
-      class="text-black uppercase font-bold text-2xl md:text-base lg:text-2xl"
+      class="text-black uppercase font-bold text-3xl md:text-base lg:text-2xl"
     >
       Santiago Suarez
     </h1>
   </div>
-  <Icon name="bars-menu" size={30} class="md:hidden menu-button" open-menu />
+  <Icon name="bars-menu" size={35} class="md:hidden menu-button" open-menu />
   <Icon
     name="close"
-    size={30}
+    size={35}
     class="md:hidden menu-button hidden"
     close-menu
   />
@@ -62,10 +58,16 @@ const navbarItems = [
         </li>
       ))
     }
-    <li class="ml-12 mr-4">
+    <li
+      class="uppercase font-bold hover:text-primary transition-colors duration-300"
+    >
+      <a href="mailto:santiago8628@gmail.com"> Contacto </a>
+    </li>
+    <li class="ml-12 mr-4 hidden">
       <Icon name="moon" size={30} />
     </li>
-    <li class="flex items-center gap-2 font-bold">
+    <li class="items-center gap-2 font-bold hidden">
+      <!-- Cambiar hidden por flex cuando se tenga la version en Inglés -->
       <Icon name="language" size={30} />
       EN
     </li>
