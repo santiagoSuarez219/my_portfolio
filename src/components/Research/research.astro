@@ -1,0 +1,60 @@
+---
+import { Image } from "astro:assets";
+
+import SmartgrowArticle from "../../assets/images/research01.jpg";
+import Presentation2023 from "../../assets/images/research02.png";
+
+const researches = [
+  {
+    title:
+      "SmartGrow DataControl: An IoT architecture for the acquisition of environmental physiological parameters in Cannabis sativa cultivations",
+    image: SmartgrowArticle,
+    type: "Artículo académico",
+    link: "https://www.sciencedirect.com/science/article/pii/S2352711024002504",
+  },
+  {
+    title:
+      "Implementación del internet de las cosas (IoT) en la agricultura: una plataforma para monitero de parametros microclimáticos bajo invernadero",
+    image: Presentation2023,
+    type: "Ponencia en evento científico",
+    link: "https://www.youtube.com/watch?v=ML83FBI5kxs",
+  },
+];
+---
+
+<section id="research" class="px-4 py-16 lg:px-16">
+  <h2
+    class="uppercase font-bold text-3xl md:text-5xl tracking-widest text-center"
+  >
+    Investigación
+  </h2>
+  <div class="bg-primary w-[48px] h-[5px] rounded-full mx-auto mt-5"></div>
+  <p class="text-center mt-5 text-text-color md:text-lg lg:text-2xl">
+    Aquí encontrarás mis trabajos en investigación científica
+  </p>
+  <ul
+    class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-screen-xl mx-auto"
+  >
+    {
+      researches.map((research) => (
+        <li>
+          <Image class="md:h-72" src={research.image} alt="Research" />
+          <h3 class="font-bold text-2xl text-center md:text-left mt-6">
+            {research.title}
+          </h3>
+          <p class="text-text-color text-sm lg:text-lg text-center md:text-left mt-2">
+            {research.type}
+          </p>
+          <a
+            href={research.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="uppercase max-w-max bg-primary text-white font-bold py-2 px-10 lg:px-16 rounded-md mt-4 block mx-auto md:mx-0 lg:text-lg hover:scale-105 transition-transform duration-300"
+          >
+            Ver más
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</section>

@@ -1,0 +1,78 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<footer class="bg-black pt-14 px-4 lg:px-16 text-white">
+  <div class="flex flex-col md:flex-row-reverse gap-12 md:gap-8 lg:pb-16">
+    <div class="md:w-1/3">
+      <h3
+        class="uppercase font-bold text-xl md:text-2xl lg:text-3xl tracking-wider"
+      >
+        Redes Sociales
+      </h3>
+      <ul class="mt-4 flex gap-3">
+        <li class="">
+          <a
+            href="https://www.linkedin.com/in/santiagosuarez219/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon name="linkedin" class="text-white" size={25} />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://github.com/santiagoSuarez219"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon name="github" class="text-white" size={25} />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.instagram.com/santiagosuarez6500/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon name="instagram" class="text-white" size={25} />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://scholar.google.com/citations?user=v3HxRvQAAAAJ&hl=es"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon name="google-scholar" class="text-white" size={25} />
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="md:w-2/3">
+      <h2
+        class="uppercase font-bold text-xl md:text-2xl lg:text-3xl tracking-wider"
+      >
+        Santiago Suarez
+      </h2>
+      <p class="text-sm md:text-base lg:text-xl mt-4 max-w-screen-md">
+        Un Ingeniero Electrónico, Desarrollador Web e Investigador apasionado
+        por la tecnología y la innovación.
+      </p>
+    </div>
+  </div>
+
+  <div class="flex items-center justify-center mt-8">
+    <span class="flex-1 h-[1px] bg-gray-400"></span>
+    <a
+      href="mailto:santiago8628@gmail.com"
+      class="bg-white text-black text-xl lg:text-3xl lg:px-10 lg:py-4 py-2 px-4 rounded-3xl"
+    >
+      Contáctame 🤙
+    </a>
+    <span class="md:w-16 flex-1 md:flex-none h-[1px] bg-gray-400"></span>
+  </div>
+  <p class="text-center text-xs mt-2">
+    {`${new Date().getFullYear()} Santiago Suarez`}
+  </p>
+</footer>

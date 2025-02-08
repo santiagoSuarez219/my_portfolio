@@ -1,0 +1,150 @@
+---
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+
+import logo from "@images/logo.png";
+
+const navbarItems = [
+  {
+    title: "Inicio",
+    url: "home",
+  },
+  {
+    title: "Acerca de mi",
+    url: "aboutme",
+  },
+
+  {
+    title: "Proyectos",
+    url: "projects",
+  },
+  {
+    title: "Experiencia",
+    url: "experience",
+  },
+  {
+    title: "Contacto",
+    url: "contactme",
+  },
+];
+---
+
+<nav
+  id="nav-bar"
+  class="w-full flex px-2 py-2 lg:px-16 lg:py-4 items-center justify-between"
+>
+  <div class="flex items-center">
+    <Image src={logo} alt="logo" class="rounded-lg w-[50px] lg:w-[70px]" />
+    <h1
+      class="text-black uppercase font-bold text-2xl md:text-base lg:text-2xl"
+    >
+      Santiago Suarez
+    </h1>
+  </div>
+  <Icon name="bars-menu" size={30} class="md:hidden menu-button" open-menu />
+  <Icon
+    name="close"
+    size={30}
+    class="md:hidden menu-button hidden"
+    close-menu
+  />
+
+  <ul
+    class="hidden md:flex items-center text-text-color gap-4
+  [&>li]:cursor-pointer z-10 lg:text-2xl"
+  >
+    {
+      navbarItems.map((item) => (
+        <li class="uppercase font-bold hover:text-primary transition-colors duration-300">
+          <a href={`#${item.url}`} aria-label={item.url}>
+            {item.title}
+          </a>
+        </li>
+      ))
+    }
+    <li class="ml-12 mr-4">
+      <Icon name="moon" size={30} />
+    </li>
+    <li class="flex items-center gap-2 font-bold">
+      <Icon name="language" size={30} />
+      EN
+    </li>
+  </ul>
+</nav>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const sections = document.querySelectorAll("section");
+    const liItems = document.querySelectorAll("nav ul li");
+    const navItems = document.querySelectorAll("nav ul li a");
+
+    const callback = (entries: any[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navItems.forEach((item, index) => {
+            if (item.getAttribute("aria-label") == entry.target.id) {
+              liItems[index].classList.add("text-primary");
+            } else {
+              liItems[index].classList.remove("text-primary");
+            }
+          });
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(callback, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.3,
+    });
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    // Cleanup function
+    document.onvisibilitychange = () => {
+      if (document.visibilityState === "hidden") {
+        observer.disconnect();
+      } else {
+        sections.forEach((section) => {
+          observer.observe(section);
+        });
+      }
+    };
+  });
+
+  document.addEventListener("astro:page-load", () => {
+    const menuButton = document.querySelectorAll(".menu-button");
+    const sideMenu = document.getElementById("side-menu");
+    const liItems = document.querySelectorAll("nav ul li");
+    const messageButton = document.getElementById(
+      "message-button"
+    ) as HTMLElement;
+
+    const openMenu = document.querySelector("[open-menu]") as HTMLElement;
+    const closeMenu = document.querySelector("[close-menu]") as HTMLElement;
+
+    if (!menuButton || !sideMenu) {
+      return;
+    }
+
+    menuButton.forEach((button) => {
+      button.addEventListener("click", () => {
+        sideMenu.classList.toggle("hidden");
+        openMenu.classList.toggle("hidden");
+        closeMenu.classList.toggle("hidden");
+        messageButton.classList.toggle("hidden");
+      });
+    });
+
+    liItems.forEach((item) => {
+      item.addEventListener("click", () => {
+        sideMenu.classList.add("hidden");
+        openMenu.classList.remove("hidden");
+        closeMenu.classList.add("hidden");
+        messageButton.classList.remove("hidden");
+      });
+    });
+  });
+</script>

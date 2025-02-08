@@ -1,0 +1,60 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<section
+  id="home"
+  class="w-full bg-secondary py-32 md:py-44 flex flex-col items-center justify-center text-center gap-4 relative"
+>
+  <h2
+    class="uppercase font-bold text-4xl md:text-[4rem] lg:text-[5rem] max-w-screen-sm lg:max-w-screen-xl md:leading-snug"
+  >
+    Hola, Yo soy Santiago Suarez
+  </h2>
+  <p class="md:text-xl lg:text-3xl lg:mt-8 md:max-w-96 lg:max-w-2xl">
+    Soy <span class="text-primary font-bold"
+      >Desarrollador Web Junior, Ingeniero Electrónico,</span
+    > e <span class="text-primary font-bold">Investigador</span>
+  </p>
+
+  <a
+    href="pdf/CV.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="block w-60 lg:w-auto bg-primary md:text-xl lg:text-2xl rounded-lg px-8 text-white uppercase font-bold py-4 mt-16 tracking-wider hover:scale-105 transition-transform duration-300"
+  >
+    Descargar CV
+  </a>
+  <div class="hidden lg:flex bg-white absolute left-0 flex-col rounded-r-md">
+    <a
+      class="block px-4 py-3"
+      href="https://www.linkedin.com/in/santiagosuarez219/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Icon name="linkedin2" size={40} class="text-black" />
+    </a>
+    <a
+      class="block px-4 py-3"
+      href="https://github.com/santiagoSuarez219"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Icon name="github" size={40} class="text-black" />
+    </a>
+    <a
+      class="block px-4 py-3"
+      href="https://www.instagram.com/santiagosuarez6500/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Icon name="instagram2" size={40} class="text-black" />
+    </a>
+  </div>
+</section>
+
+<style>
+  .item-banner {
+    box-shadow: -1px 1px 9px 5px rgba(255, 255, 255, 0.05);
+  }
+</style>

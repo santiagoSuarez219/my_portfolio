@@ -1,0 +1,64 @@
+---
+const training = [
+  {
+    title: "Ingeniero Electrónico",
+    place: "Instituto Tecnólogico Metropolitano (ITM)",
+    date: "Enero 2025",
+    description:
+      "Durante mis estudios de pregrado tuve la oportunidad de formarme en diferentes áreas de la ciencia, adquirí habilidades en programación, IoT, circuitos eléctricos y electrónicos, soft skills como trabajo en equipo y comunicación asertiva y también pude participar en diferentes proyectos académicos sobre innovación tecnológica.",
+  },
+  {
+    title: "Inglés",
+    place: "Idiomas ITM - CIA Idiomas",
+    date: "Actualmente Nivel A2",
+    description:
+      "Estoy estudiando inglés, actualmente estoy en el nivel A2, lo que me ha permitido manejar situaciones cotidianas básicas en inglés. Puedo presentarme, hacer preguntas sencillas y entender frases comunes relacionadas con información personal y necesidades inmediatas. También soy capaz de entender mensajes cortos y escribir textos simples. Aunque mi nivel es básico, sigo mejorando mis habilidades para comunicarme en inglés de manera más fluida y efectiva.",
+  },
+  {
+    title: "Cursos de Desarrollo Web",
+    place: "Udemy - Platzi - Alura",
+    date: "2022 - 2025",
+    description:
+      "En Udemy y Platzi he tenido la oportunidad de profundizar en el desarrollo con React, JavaScript, TypeScript, Tailwind, NextJS y Astro. Durante el año 2024, fui beneficiario de una beca de Oracle y su programa ONE que me permitió tomar cursos en la plataforma Alura, orientados al desarrollo web.",
+  },
+];
+---
+
+<section id="training" class="px-4 py-16 bg-secondary">
+  <h2
+    class="uppercase font-bold text-3xl md:text-5xl tracking-widest text-center"
+  >
+    Formación
+  </h2>
+  <div class="bg-primary w-[48px] h-[5px] rounded-full mx-auto mt-5"></div>
+  <ul class="w-full mt-8 lg:mt-24 max-w-screen-lg mx-auto">
+    {
+      training.map((item) => (
+        <li>
+          <div class="relative ml-12 pb-12 grid before:absolute before:left-[-33px] before:block before:h-full before:border-l-2 before:border-primary before:content-[''] md:grid-cols-2 md:gap-10 md:space-x-4">
+            <div class="relative pb-4 lg:pb-12 ">
+              <div class="sticky top-0 ">
+                <span class="text-primary -left-[41px] absolute rounded-full text-6xl">
+                  &bull;
+                </span>
+
+                <h3 class="text-2xl md:text-3xl lg:text-4xl font-bold text-primary">
+                  {item.title}
+                </h3>
+                <h4 class="text-sm md:text-base lg:text-lg text-primary">
+                  {item.place}
+                </h4>
+                <time class="p-0 m-0 text-text-color text-sm md:text-base lg:text-lg">
+                  {item.date}
+                </time>
+              </div>
+            </div>
+            <div class="relative flex flex-col gap-2 pb-4 text-text-color lg:text-2xl ">
+              <p>{item.description}</p>
+            </div>
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+</section>

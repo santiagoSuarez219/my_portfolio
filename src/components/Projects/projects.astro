@@ -1,0 +1,69 @@
+---
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+
+import ecuot from "@images/ecuot.png";
+const projects = [
+  // {
+  //   title: "Mi Portfolio",
+  //   description:
+  //     "Este es mi portafolio personal, donde muestro mis principales proyectos y algo de información sobre mi.",
+  //   image: ecuot,
+  //   type: "Proyecto Personal",
+  //   github: "https://github.com/santiagoSuarez219/portfolio-santiago",
+  //   demo: "",
+  // },
+  // {
+  //   title: "Smartgrow - Proyecto IoT",
+  //   description:
+  //     "Esta es una aplicación web e IoT para monitorear y gestionar un sistema de cultivo hidropónico.",
+  //   image: "/img/smartgrow.jpeg",
+  //   type: "Desarrollo",
+  // },
+  {
+    title: "ECUOT",
+    description:
+      "ECUOT es una aplicación web innovadora que actúa como repositorio de información y plataforma de visualización para analizar las tensiones ocasionadas por el ordenamiento territorial en Medellín. Esta herramienta ha facilitado el aprendizaje, el debate y el intercambio de conocimientos sobre problemáticas urbanas, promoviendo un análisis crítico e informado.",
+    image: ecuot,
+    type: "Desarrollo",
+    github: "",
+    demo: "https://ecuot.vercel.app/",
+  },
+];
+---
+
+<section id="projects" class="px-4 py-16 bg-secondary">
+  <h2
+    class="uppercase font-bold text-3xl md:text-5xl tracking-widest text-center"
+  >
+    Proyectos
+  </h2>
+  <div class="bg-primary w-[48px] h-[5px] rounded-full mx-auto mt-5"></div>
+  <p class="text-center mt-5 text-text-color md:text-lg lg:text-2xl">
+    Aquí encontrarás algunos de los proyectos personales y para clientes que he
+    creado
+  </p>
+  {
+    projects.map((project) => (
+      <div class="mt-8 flex flex-col lg:flex-row lg:px-16">
+        <Image src={project.image} alt={project.title} class="lg:w-2/3" />
+        <div class="flex-1 self-center">
+          <h2 class="font-bold text-2xl md:text-3xl lg:text-4xl text-center lg:text-left mt-6">
+            {project.title}
+          </h2>
+          <p class="text-sm md:text-base lg:text-2xl lg:mt-8 text-text-color text-center lg:text-left mt-2">
+            {project.description}
+          </p>
+          <a
+            href="https://ecuot.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="uppercase max-w-max bg-primary text-white font-bold py-2 md:py-4 px-10 lg:px-16 rounded-md lg:rounded-md mt-4 block mx-auto lg:mx-0 text-lg lg:text-2xl lg:mt-8 hover:scale-105 transition-transform duration-300"
+          >
+            Ver más
+          </a>
+        </div>
+      </div>
+    ))
+  }
+</section>

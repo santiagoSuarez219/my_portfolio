@@ -1,0 +1,209 @@
+---
+import { Icon } from "astro-icon/components";
+
+const contactInformation = [
+  {
+    item: "Nombre",
+    value: "Santiago Suárez",
+  },
+  {
+    item: "Teléfono",
+    value: "+57 321 703 7469",
+  },
+  {
+    item: "Correo",
+    value: "santiago8628@gmail.com",
+  },
+  {
+    item: "Ubicación",
+    value: "Medellín, Colombia",
+  },
+];
+
+const developmentSkills = [
+  "React",
+  "Next",
+  "Astro",
+  "Node",
+  "MongoDB",
+  "PostgreSQL",
+  "TypeScript",
+  "JavaScript",
+  "TailwindCSS",
+];
+
+const workSkills = ["GitHub", "Docker", "Trello", "Notion", "SCRUM"];
+
+const otherSkills = ["Python"];
+
+const electronicsSkills = [
+  "Arduino",
+  "ESP32",
+  "Raspberry Pi",
+  "MQTT",
+  "C++",
+  "Sensores",
+];
+---
+
+<section id="aboutme" class="py-24">
+  <h2
+    class="uppercase font-bold text-3xl md:text-5xl tracking-widest text-center"
+  >
+    Acerca de mi
+  </h2>
+  <div class="bg-primary w-[48px] h-[5px] rounded-full mx-auto mt-5"></div>
+
+  <h3
+    class="text-center mt-5 text-text-color md:text-lg lg:text-2xl px-4 max-w-screen-lg mx-auto"
+  >
+    Aquí encontrarás más información sobre mí, lo que hago, y mis habilidades
+    actuales en desarrollo web, ingeniería electrónica, IoT e investigación
+  </h3>
+  <div class="flex flex-col lg:flex-row">
+    <div
+      class="[&>p]:px-4 md:[&>p]:text-lg md:[&>p]:max-w-screen-sm lg:[&>p]:max-w-none lg:px-16 lg:[&>p]:text-2xl [&>p]:text-text-color flex-1 [&>p>a]:text-primary [&>p>a]:font-bold"
+    >
+      <h3 class="text-2xl md:text-3xl lg:text-4xl font-bold px-4 mt-8 mb-4">
+        Conóceme !
+      </h3>
+      <p>
+        Cuento con un año de experiencia como <span>desarrollador web</span>,
+        destacando mi participación en el proyecto <a
+          href="https://ecuot.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer">ECUOT</a
+        >
+        del Colegio Mayor de Antioquia, donde desarrollé una aplicación web innovadora
+        que funciona como repositorio de información y plataforma de visualización
+        para analizar las tensiones ocasionadas por el ordenamiento territorial en
+        Medellín. Puedes explorar este y otros proyectos en la sección de <a
+          href="#projects">Proyectos</a
+        >.
+      </p>
+      <br />
+      <p>
+        También soy <span>Ingeniero Electrónico</span> con dos años de experiencia
+        en el diseño y construcción de sistemas embebidos orientados al Internet
+        de las Cosas (IoT). He participado en proyectos destacados como <span
+          >Smartgrow</span
+        >, donde colaboré en el desarrollo de un dispositivo embebido de bajo
+        costo y alta precisión para la adquisición y almacenamiento de datos
+        agroclimáticos en cultivos.
+      </p>
+      <br />
+      <p>
+        Fui Joven Investigador ITM 2023 y Joven Talento Minciencias 2024.
+        Durante ese tiempo, publiqué un <a
+          href="https://www.sciencedirect.com/science/article/pii/S2352711024002504"
+          target="_blank"
+          rel="noopener noreferrer">artículo académico</a
+        > y participé como ponente en congresos nacionales. Puedes conocer más sobre
+        mis investigaciones en la sección de <a href="#research"
+          >Investigación</a
+        >. Siéntete libre de conectarte conmigo o seguirme en LinkedIn e
+        Instagram. También puedes explorar mi trabajo en GitHub y Google
+        Scholar. Estoy abierto a nuevas oportunidades laborales donde pueda
+        contribuir, aprender y crecer. Si tienes una oportunidad que coincida
+        con mis habilidades y experiencia, no dudes en contactarme
+      </p>
+      <br />
+      <p>
+        Siéntete libre de conectarte conmigo o seguirme en <a
+          href="https://www.linkedin.com/in/santiagosuarez219/"
+          target="_blank"
+          rel="noopener noreferrer">LinkedIn</a
+        >
+        e <a
+          href="https://www.instagram.com/santiagosuarez6500/"
+          target="_blank"
+          rel="noopener noreferrer">Instagram</a
+        > . También puedes explorar mi trabajo en <a
+          href="https://github.com/santiagoSuarez219"
+          target="_blank"
+          rel="noopener noreferrer">GitHub</a
+        > y <a
+          href="https://scholar.google.com/citations?user=v3HxRvQAAAAJ&hl=es"
+          target="_blank"
+          rel="noopener noreferrer">Google Scholar</a
+        >. Estoy abierto a nuevas oportunidades laborales donde pueda
+        contribuir, aprender y crecer. Si tienes una oportunidad que coincida
+        con mis habilidades y experiencia, no dudes en contactarme
+      </p>
+      <br />
+      <p>
+        Estoy abierto a nuevas oportunidades laborales donde pueda contribuir,
+        aprender y crecer. Si tienes una oportunidad que coincida con mis
+        <a href="#aboutme">habilidades</a> y <a href="#experience"
+          >experiencia</a
+        >, no dudes en contactarme
+      </p>
+      <a
+        href="mailto:santiago8628@gmail.com"
+        class="block text-white font-bold text-xl w-1/2 max-w-72 uppercase bg-primary ml-4 py-4 text-center rounded-md mt-12 hover:scale-105 transition-transform duration-300"
+        >Contacto</a
+      >
+    </div>
+    <section
+      id="skills"
+      class="px-4 py-16 md:[&>div>h3]:text-lg md:[&>div>div>p]:text-lg flex-1"
+    >
+      <h2 class="font-bold text-xl md:text-2xl lg:text-3xl">Mis Habilidades</h2>
+      <div class="mt-6 text-text-color">
+        <h3>En desarrollo web</h3>
+        <div class="flex flex-wrap gap-2 mt-2">
+          {
+            developmentSkills.map((skill) => (
+              <p class="max-w-max bg-secondary px-4 py-2 rounded-sm font-bold">
+                {skill}
+              </p>
+            ))
+          }
+        </div>
+      </div>
+      <div class="mt-6 text-text-color">
+        <h3>En gestión del trabajo</h3>
+        <div class="flex flex-wrap gap-2 mt-2">
+          {
+            workSkills.map((skill) => (
+              <p class="max-w-max bg-secondary px-4 py-2 rounded-sm font-bold">
+                {skill}
+              </p>
+            ))
+          }
+        </div>
+      </div>
+      <div class="mt-6 text-text-color">
+        <h3>En otras tecnologias y lenguajes de programacion</h3>
+        <div class="flex flex-wrap gap-2 mt-2">
+          {
+            otherSkills.map((skill) => (
+              <p class="max-w-max bg-secondary px-4 py-2 rounded-sm font-bold">
+                {skill}
+              </p>
+            ))
+          }
+        </div>
+      </div>
+      <div class="mt-6 text-text-color">
+        <h3>En Ingeniería Electrónica e IoT</h3>
+        <div class="flex flex-wrap gap-2 mt-2">
+          {
+            electronicsSkills.map((skill) => (
+              <p class="max-w-max bg-secondary px-4 py-2 rounded-sm font-bold">
+                {skill}
+              </p>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
+
+<style>
+  span {
+    color: #7843e9;
+    font-weight: bold;
+  }
+</style>

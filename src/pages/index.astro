@@ -1,11 +1,62 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import { Icon } from "astro-icon/components";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Experience from "@components/Experience/experience.astro";
+import ContactMe from "@components/ContactMe/contactme.astro";
+import Research from "@components/Research/research.astro";
+import Projects from "@components/Projects/projects.astro";
+import Training from "@components/Training/training.astro";
+import SideMenu from "@components/SideMenu/sidemenu.astro";
+import Aboutme from "@components/AboutMe/aboutme.astro";
+import Banner from "@components/Banner/banner.astro";
+import Navbar from "@components/Navbar/navbar.astro";
+import Footer from "@components/Footer/footer.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+  title="Portafolio de Santiago"
+  description="Soy Santiago, un desarrollador web, ingeniero electrónico e investigador. Aquí encontrarás información sobre mi experiencia, proyectos, formación y más."
+>
+  <Navbar />
+  <main
+    class="h-[calc(100vh-81.77px)] md:h-[calc(100vh-70.8px)] lg:h-[calc(100vh-108.73px)] overflow-auto"
+  >
+    <Banner />
+    <Aboutme />
+    <Projects />
+    <Experience />
+    <Training />
+    <Research />
+    <ContactMe />
+    <Footer />
+    <SideMenu />
+  </main>
+  <a
+    class="bg-primary p-4 lg:p-6 absolute bottom-6 right-6 rounded-full text-white"
+    href="mailto:santiago8628@gmail.com"
+    id="message-button"
+  >
+    <Icon name="message" size={25} />
+  </a>
 </Layout>
+
+<style>
+  main {
+    scroll-behavior: smooth;
+  }
+  main::-webkit-scrollbar {
+    width: 5px;
+    background: #d9d9d9;
+  }
+
+  main::-webkit-scrollbar-thumb {
+    border-radius: 40px;
+    border: 5px solid #7843e9;
+  }
+
+  main::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 0 0 0 0 0;
+  }
+</style>
